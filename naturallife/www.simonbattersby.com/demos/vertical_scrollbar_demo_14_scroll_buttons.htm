@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- Mirrored from www.simonbattersby.com/demos/vertical_scrollbar_demo_14_scroll_buttons.htm by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 01 Apr 2013 18:30:45 GMT -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+
+<script type="text/javascript" src="../../ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../javascript/jquery.mousewheel.min.3.0.6.js"></script>
+<script type="text/javascript" src="../javascript/cufon-yui.js"></script>
+<script type="text/javascript" src="../javascript/Museo_400.font.js"></script>
+<script type="text/javascript">
+			Cufon.replace('h1',{fontFamily: 'Museo' });
+</script>
+<link rel="stylesheet" href="../css/vertical.slider.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="../css/demos.css" type="text/css" media="screen"/>
+<style type="text/css">
+#anchors{float:left;height:300px;position:relative}
+#arrow_up{position:absolute;bottom:50px;cursor:pointer}
+#arrow_down{position:absolute;bottom:0;cursor:pointer}
+</style>
+</head>
+
+<body>
+
+
+
+<div id="scroll-pane">
+		<div class="scroll-content-item anchor0">1</div>
+		<div class="scroll-content-item2 ">2</div>
+		<div class="scroll-content-item3 ">3</div>
+		<div class="scroll-content-item  anchor1">4</div>
+		<div class="scroll-content-item2 ">5</div>
+		<div class="scroll-content-item3 ">6</div>
+		<div class="scroll-content-item anchor2">7</div>
+		<div class="scroll-content-item2 ">8</div>
+		<div class="scroll-content-item3 ">9</div>
+		<div class="scroll-content-item anchor3">10</div>
+		<div class="scroll-content-item2 ">11</div>
+		<div class="scroll-content-item3 ">12</div>
+		<div class="scroll-content-item anchor4">13</div>
+		<div class="scroll-content-item2 ">14</div>
+		<div class="scroll-content-item3 ">15</div>
+		<div class="scroll-content-item anchor5">16</div>
+		<div class="scroll-content-item2 ">17</div>
+		<div class="scroll-content-item3 ">18</div>
+		<div class="scroll-content-item anchor6">19</div>
+		<div class="scroll-content-item2 ">20</div>
+</div>
+<div id="anchors">
+<img id="arrow_up" alt="Up" src="../images/misc/up_arrow.gif" width="50" />
+<img id="arrow_down" alt="Down" src="../images/misc/down_arrow.gif"width="50" />
+</div>
+
+<script type="text/javascript" src="../javascript/vertical.slider.standard.js"></script>
+<script type="text/javascript">
+setSlider($('#scroll-pane'));
+
+$('#arrow_up').mousedown(function(event) {
+	if(event.preventDefault) event.preventDefault();
+    intervalId = setInterval('scrollUp()', 30);
+	$(this).bind('mouseup mouseleave', function() {
+		clearInterval(intervalId);
+	});
+});
+$('#arrow_down').mousedown(function(event) {
+	if(event.preventDefault) event.preventDefault();
+    intervalId = setInterval('scrollDown()', 30);
+	$(this).bind('mouseup mouseleave', function() {
+		clearInterval(intervalId);
+	});
+});
+
+function scrollUp(){
+	if ($(".slider-vertical").slider("value")<100){
+		$(".slider-vertical").slider("value",$(".slider-vertical").slider("value")+1);
+	}
+}
+function scrollDown(){
+	if ($(".slider-vertical").slider("value")>0){
+		$(".slider-vertical").slider("value",$(".slider-vertical").slider("value")-1);
+	}
+}
+</script>
+<script type="text/javascript"> Cufon.now(); </script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8019289-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+
+<!-- Mirrored from www.simonbattersby.com/demos/vertical_scrollbar_demo_14_scroll_buttons.htm by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 01 Apr 2013 18:30:53 GMT -->
+</html>
